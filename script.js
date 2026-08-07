@@ -1,4 +1,4 @@
-let board = ['', '', ''];
+let board = ['', '', '', '', ''];
 let player = 'X';
 let gameOver = false;
 
@@ -14,7 +14,7 @@ function playGame(boxNumber) {
         if (checkWinner() === true) {
             turnMsg.innerText = "Player " + player + " Win! 🎉";
             gameOver = true;
-        } else if (checkDraw() === true) {
+        } else if (!board.includes('') ) {
             turnMsg.innerText = "Match Draw!";
             gameOver = true;
         } else {
@@ -51,17 +51,8 @@ function checkWinner() {
     return false;
 }
 
-function checkDraw() {
-    for (let i = 0; i < board.length; i++) {
-        if (board[i] === '') {
-            return false;
-        }
-    }
-    return true;
-}
-
 function resetGame() {
-    board = ['', '', ''];
+    board = ['', '', '', ''];
     player = 'X';
     gameOver = false;
     turnMsg.innerText = "Player " + player + " Turn";
@@ -69,4 +60,4 @@ function resetGame() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].innerText = '';
     }
-}
+            }
