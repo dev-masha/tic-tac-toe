@@ -1,4 +1,4 @@
-let board = ['', '', '', '', '', '', ''];
+let board = ['', '', ''];
 let player = 'X';
 let gameOver = false;
 
@@ -61,7 +61,7 @@ function checkDraw() {
 }
 
 function resetGame() {
-    board = ['', '', '', '', '', '', ''];
+    board = ['', '', ''];
     player = 'X';
     gameOver = false;
     turnMsg.innerText = "Player " + player + " Turn";
