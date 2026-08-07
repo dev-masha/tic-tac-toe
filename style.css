@@ -1,63 +1,69 @@
 body {
-  text-align: center;
-  font-family: Arial;
-  background: gray;
-  margin: 0;
-  padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: gray;
+    margin: 0;
+    padding: 20px;
 }
 
 h1 {
-  color: black;
-  font-size: 2rem;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  justify-content: center;
-  margin: 20px auto;
-  max-width: 350px;
-  width: 90vw;
-}
-
-.cell {
-  aspect-ratio: 1 / 1;
-  background: white;
-  border: 2px solid black;
-  font-size: 50px;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.cell:hover {
-  background: silver;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 5px;
-}
-
-button:hover {
-  background: gray;
+    color: black;
+    font-size: 2rem;
 }
 
 #turn {
-  font-size: 1.2rem;
-  color: black;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 20px auto;
+    max-width: 350px;
+    width: 90%;
+}
+
+.cell {
+    aspect-ratio: 1 / 1;
+    background: white;
+    border: 2px solid black;
+    font-size: 50px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cell:hover {
+    background: silver;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #333;
 }
 
 @media (max-width: 500px) {
-  h1 { font-size: 1.5rem; }
-.cell { font-size: 12vw; }
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .cell {
+        font-size: 12vw;
+    }
 }
