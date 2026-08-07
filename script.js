@@ -1,4 +1,4 @@
-let board = ['', '', '', '', '', '', '', '', ''];
+let board = ['', '', '', '', '', '', ''];
 let player = 'X';
 let gameOver = false;
 
@@ -6,6 +6,7 @@ let boxes = document.querySelectorAll('.cell');
 let turnMsg = document.getElementById('turn');
 
 function playGame(boxNumber) {
+    boxNumber = parseInt(boxNumber);
     if (board[boxNumber] === '' && gameOver === false) {
         board[boxNumber] = player;
         boxes[boxNumber].innerText = player;
@@ -17,18 +18,13 @@ function playGame(boxNumber) {
             turnMsg.innerText = "Match Draw!";
             gameOver = true;
         } else {
-            if (player === 'X') {
-                player = 'O';
-            } else {
-                player = 'X';
-            }
+            player = player === 'X'? 'O' : 'X';
             turnMsg.innerText = "Player " + player + " Turn";
         }
     }
 }
 
 boxes.forEach(function(box) {
-    // Mobile + PC dono ke liye
     box.addEventListener('click', function() {
         let boxNumber = box.getAttribute('data-index');
         playGame(boxNumber);
@@ -65,7 +61,7 @@ function checkDraw() {
 }
 
 function resetGame() {
-    board = ['', '', ''];
+    board = ['', '', '', '', '', '', ''];
     player = 'X';
     gameOver = false;
     turnMsg.innerText = "Player " + player + " Turn";
