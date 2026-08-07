@@ -1,7 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    background: sky blue;
+    background: grey;
     margin: 0;
     padding: 20px;
 }
@@ -37,7 +37,6 @@ h1 {
     cursor: pointer;
     border-radius: 8px;
     user-select: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .cell:hover {
